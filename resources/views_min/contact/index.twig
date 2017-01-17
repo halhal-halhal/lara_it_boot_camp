@@ -1,0 +1,428 @@
+{% extends "/layouts/base.twig" %}
+{% block content %}
+{% include "/elements/header.twig" %}
+   <!-- FV -->
+    <header id="canvas-container">
+      <div class="parallax-picture all-bg">
+        <div class="top_pic">
+          <article id="recommend-pic" class="parallax-pic_inner">
+            <h1>お問い合わせ</h1>
+            <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+             <defs>
+              <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+             </defs>
+              <g class="parallax">
+               <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+              </g>
+            </svg>
+          </article>
+        </div>
+      </div>
+    </header>
+    <!-- ./FV -->
+<div style="margin-top: 100px;"></div>
+<article id="page-wrapper">
+  <div class="container">
+    <section class="page-content">
+      <div id="contact-container">
+        <h1>詳しい話を聞く</h1>
+        <br>
+        <h2>ウェブデザイン 女性限定キャンペーン</h2>
+        <p style="font-size:1.25em;">
+          <a href="/cam_lp-2/">詳しくはこちら</a>
+        </p>
+        <br>
+        <hr class="style-hr">
+        <h2>まずはカウンセリング、面談を受けてみませんか？</h2>
+        <ul class="disc">
+          <li class="txt-16">どのコースを受講すればいいのかよくわからない</li>
+          <li class="txt-16">今はお金がないけど、いつか参加してみたい</li>
+          <li class="txt-16">卒業後どんな道があるのかだけ、聞いてみたい</li>
+          <li class="txt-16">教室の施設の詳細を聞きたい</li>
+          <li class="txt-16">キャンプ地の周辺情報を知りたい</li>
+          <li class="txt-16">興味があるので詳しく聞いてみたい</li>
+        </ul>
+        <p>など、ちょっとでも気になることがあればまずはカウンセリング、面談を受けてみませんか？ スカイプ、またはお電話にて対応いたします。</p>
+        <br>
+        <hr class="style-hr">
+        <!-- flow_info -->
+        <div class="flow_info">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <hr>
+              <table class="program-flow">
+                <tbody>
+                  <tr>
+                    <th colspan="2">
+                      <h2>お問い合わせ〜入隊までの流れ</h2>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="flow-bg-1" colspan="2">
+                      <h3>お問い合わせ</h3>
+                      <p>フォームからカウンセリング、面談の問い合わせ。</p>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="flow-bg-2" colspan="2">
+                      <h3>面談</h3>
+                      <p>ビデオチャット、またはお電話にて面談を実施します。<br>
+                        <small>※もちろん面談後に辞退することも可能です。</small></p>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="flow-bg-3" colspan="2">
+                        <h3>入隊手続き</h3>
+                        <p>面談後に入隊用のお申込みフォームをお送り致します。<br>
+                          入隊をご希望の方はそのフォームよりお申し込みをしていただきます。</p>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th class="flow-bg-4" colspan="2">
+                          <h3>ご入金</h3>
+                          <p>銀行振込又は、クレジットカードでのお支払が可能です。<br>
+                            分割のお支払いも可能ですので、ご相談ください。</p>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th class="flow-bg-5" colspan="2">
+                            <h3>事前準備</h3>
+                            <p>入金確認後に事務局より、入隊後の流れと事前準備についてご連絡致します。</p>
+                          </th>
+                        </tr>
+                        <tr>
+                          <th class="flow-bg-6" colspan="2">
+                            <h3>入隊</h3>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+              <!-- ./flow_info -->
+              <br>
+              <hr class="style-hr">
+              <!-- contact_form -->
+              <div id="ibc_wp_form">
+                <form class="form-horizontal" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+                  <input type=hidden name="oid" value="00D10000000ZsZk">
+                  <input type=hidden name="retURL" value="http://i-b-c.jp/thanks/">
+
+                  <fieldset>
+                    <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <h3>お気軽にご相談ください。</h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label"><span class="must">(必須)</span>&nbsp;お名前&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-md-6 col-xs-12">
+                          <input id="last_name" class="form-control" name="last_name" type="text" placeholder="山田" required>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                          <input id="first_name" class="form-control" name="first_name" type="text" placeholder="太郎" required>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label"><span class="must">(必須)</span>&nbsp;フリガナ&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-md-6 col-xs-12">
+                          <input id="00N100000058D9V" class="form-control" name="00N100000058D9V" type="text" placeholder="ヤマダ" required>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                          <input id="00N100000058D9a" class="form-control" name="00N100000058D9a" type="text" placeholder="タロウ" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label"><span class="must-02">(必須)</span>&nbsp;現住所&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <select id="00N100000058uFb" class="form-control" title="現住所（都道府県）" name="00N100000058uFb" required>
+                            <option value>- 都道府県 -</option>
+                            {% for prefecture_key, prefecture_data in prefecture_data_list %}
+                            {% if input["prefecture_data"] == prefecture_data %}
+                            <option value={{prefecture_key}} selected>{{prefecture_data}}</option>
+                            {% else %}
+                            <option value={{prefecture_key}}>{{prefecture_data}}</option>
+                            {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">会社名 (法人の場合) *法人割引対象&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <input id="company" class="form-control" name="company" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;メール&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <input id="email" class="form-control" name="email" type="email" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;電話番号&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <input id="phone" class="form-control" name="phone" type="tel" required>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;年代&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                          <select id="00N100000059GE6" class="form-control" title="年代" name="00N100000059GE6" required>
+                            <option value>- 選択 -</option>
+                            {% for generation_key, generation_data in generation_data_list %}
+                            {% if input["generation_data"] == generation_data %}
+                            <option value={{generation_key}} selected>{{generation_data}}
+                            </option>
+                            {% else %}
+                            <option value={{generation_key}}>{{generation_data}}
+                            </option>
+                            {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;性別&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <select id="00N100000059GEB" class="form-control" title="性別" name="00N100000059GEB" required>
+                            <option value>- 選択 -</option>
+                            {% for gender_key, gender_data in gender_data_list %}
+                            {% if input["gender_data"] == gender_data %}
+                            <option value={{gender_key}} selected>{{gender_data}}</option>
+                            {% else %}
+                            <option value={{gender_key}}>{{gender_data}}</option>
+                            {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;卒業後の進路希望&nbsp;*複数選択可&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <select id="00N100000059GEL" class="plural" multiple="multiple" name="00N100000059GEL" title="卒業後の希望進路" required>
+                            {% for future_key, future_data in future_data_list %}
+                            {% if input["future_data"] == future_data %}
+                            <option value={{future_key}} selected>&nbsp;&nbsp;{{future_data}}</option>
+                            {% else %}
+                            <option value={{future_key}}>&nbsp;&nbsp;{{future_data}}</option>
+                            {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;コース選択&nbsp;*宿泊費別途&nbsp;&nbsp;&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <select id="00N100000058D9p" name="00N100000058D9p" title="コース選択" class="form-control" required>
+                            <option value="">ー 選択 ー</option>
+                            {% for course_key, course_data in course_data_list %}
+                            {% if input["course_data"] == course_data %}
+                            <option value={{course_key}} selected>{{course_data}}</option>
+                            {% else %}
+                            <option value={{course_key}}>{{course_data}}</option>
+                            {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12">
+                          <label class="control-label">(必須)&nbsp;希望開始日、面談希望日と可能時間帯をご記入ください。
+                            ご不明な点があればお気軽にご記入ください。 ※キャンペーンコードはこちらにご入力ください。</label>
+                          </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                          <div class="col-xs-12">
+                            <textarea id="00N100000058D9zEAE" class="form-control" name="00N100000058D9zEAE" rows="3" required></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="row form-group form-group-sm">
+                        <div class="col-md-10 col-md-offset-1">
+                          <div class="col-xs-12">
+                            <label class="control-label">
+                              個人情報について&nbsp;&nbsp;&nbsp;</label><br>
+                              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">個人情報保護方針</button>
+                              <div id="myModal" class="modal fade">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">個人情報保護方針</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>株式会社Cajon（以下、弊社）は、個人情報を保護することが社会的責務であるとともに、社会の信頼を得て企業活動を推進するために不可欠な要件であると認識しております。<br>
+                                        弊社は、お客様の個人情報の適切な管理・利用に十分配慮し、次の取り組みを実施します。</p>
+                                        <p>■ 個人情報の管理<br>
+                                          <p>弊社は、お客様の個人情報について、管理責任者を任命するとともに、弊社の個人情報保護に関する規定に従って適切に管理します。</p>
+                                          <p>■ 利用目的と収集範囲<br>
+                                            <p>弊社は、お客様からお名前・ご住所・電話番号・メールアドレスなどの個人情報をご提供いただく場合は、あらかじめ利用目的やお問い合わせの窓口などをお知らせし、適切な範囲内でお客様の個人情報を収集させていただきます。</p>
+                                            <p>■ 個人情報の利用<br>
+                                              <p>お客様から、個人情報を収集させていただく場合は、その目的を明確にお知らせするものとし、次にあげる目的のために利用させていただきます。</p>
+                                              <ul>
+                                                <li>お客様からのお問合せへの回答のため。</li>
+                                                <li>商品のご注文の受付やそれに伴うご連絡のため。</li>
+                                                <li>商品の配達やそれに伴うご連絡のため。</li>
+                                                <li>保守サービスのご提供のため。</li>
+                                                <li>商品やサービスをご案内するダイレクトメールや電子メールを送付するため。</li>
+                                                <li>当グループのマーケティング及びサービス向上、商品開発のための統計調査のため。</li>
+                                                <li>各種キャンペーン等のお知らせをお客様にお届けするため。</li>
+                                              </ul>
+                                              <p>■ 第三者への提供・開示の禁止<br>
+                                                <p>弊社は、お客様から同意いただいている場合や法令に基づき開示を請求された場合など正当な理由がある場合を除き、お客様の個人情報を第三者に提供・開示いたしません。</p>
+
+                                                <p>■ 業務委託先の監督<br>
+                                                  <p>弊社は、お客様から同意いただいた利用目的を達成するために、当社より業務委託先に対してお客様の個人情報を開示する場合には、当社と同様の水準で個人情報の厳重な管理を徹底するよう契約により義務付け、これを実施させるなど、適切な監督を行います。</p>
+
+                                                  <p>■ 情報セキュリティの確保・向上<br>
+                                                    <p>弊社は、お客様の個人情報の漏洩・紛失・改ざんなどを防止するため、継続して情報セキュリティの確保・向上に努めます。</p>
+
+                                                    <p>■ 教育・啓発<br>
+                                                      <p>弊社は、すべての役員・従業員に対し、個人情報保護の重要性を理解し、お客様の個人情報を適切に取り扱うよう教育・啓発を行います。</p>
+
+                                                      <p>■ 個人情報の開示・訂正などへの対応<br>
+                                                        <p>弊社は、お客様より収集させて頂いた個人情報を次のいずれかに該当する場合を除き、第三者に提供・開示等は一切致しません。</p>
+                                                        <ul>
+                                                          <li>法令等により開示が求められた場合。</li>
+                                                          <li>お客様からのお問合わせに対し、その内容が当社の協力会社から直接回答するのが適当と当社が判断した場合。</li>
+                                                          <li>適切な保護処置を講じた上で、当社の協力会社に提供・共同利用する場合。</li>
+                                                          <li>お客様の事前の同意を得た場合。</li>
+                                                          <li>お客様及び一般市民の生命、健康、財産等に重大な損害が発生する事を防止する為に必要な場合。</li>
+                                                          <li>公的機関より法律に基づく権限による開示請求があった場合。</li>
+                                                        </ul>
+                                                        <p>弊社は､お客様がご自身の個人情報の開示や訂正などをご希望される場合、お申し出いただいたお客様がご本人であることを確認させていただいた上で、合理的な期間及び範囲で対応させていただきます。</p>
+
+                                                        <p>■ 継続的な見直しと改善<br>
+                                                          <p>弊社は、個人情報保護に関連する法令、その他の規範を遵守するとともに、社会環境の変化に応じて、個人情報保護の取り組みを継続的に見直し、改善します。</p>
+
+                                                          <p>ご提供いただく個人情報は、入校などのご案内のために利用いたします。<br>
+                                                            お客様の同意なしに、上記以外の目的に利用することはありません。</p>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button class="btn btn-default" type="button" data-dismiss="modal">閉じる</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <!-- ./モーダルコンテンツ -->
+                                                  </div>
+                                                </div>
+                                              </div>
+
+
+
+                                              <div class="form-group">
+                                                <div class="col-md-10 col-md-offset-1">
+                                                  <div class="col-xs-12">
+                                                    <label class="col-md-2 control-label">IBC個人情報</label>
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-10 col-md-offset-1">
+                                                  <div class="col-xs-12">
+                                                    <div class="togglebutton">
+                                                      <label>
+                                                        <input id="00N10000005AdUk" name="00N10000005AdUk" type="checkbox" value="1" required>同意チェック
+                                                      </label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+
+
+                                              <div class="form-group">
+                                                <div class="col-md-10 col-md-offset-1">
+                                                  <button class="btn_a" name="submit" type="submit">送信する</button>
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </article>
+                                  {% endblock %}

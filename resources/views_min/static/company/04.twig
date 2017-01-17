@@ -1,0 +1,95 @@
+{% extends "/layouts/base.twig" %}
+{% block content %}
+    {% include "/elements/header.twig" %}
+    <!-- FV -->
+    <header id="canvas-container">
+        <div class="parallax-picture all-bg">
+            <div class="top_pic">
+                <article id="recommend-pic" class="parallax-pic_inner">
+                    <h1>内定者研修として</h1>
+                    <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+                        <defs>
+                            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+                        </g>
+                    </svg>
+                </article>
+            </div>
+        </div>
+    </header>
+    <!-- ./FV -->
+
+    <!-- 固定ページテンプレート -->
+    <article id="page-wrapper">
+        <!-- Page Content -->
+        <div class="container">
+            <hr class="style-hr">
+                 <div class="row">
+                        <!-- Content -->
+                        <div class="col-md-9 page-style">
+            <!-- 固定ページテンプレート -->
+            <section class="page-content">
+
+                <!-- pタグ自動挿入制御 -->
+                <article class="company_content">
+                    <h2>内定者研修として、IBCを活用するメリット</h2>
+
+                    <h3>エンジニア育成はもちろん、ディレクターや営業マン育成にも</h3>
+                    エンジニア育成のためにIBCを社内研修として導入することは、企業にとっては、未経験者や経験不足の人材でも短期間で急成長させることができるなど大きなメリットがあります。 しかしながら、IBCの研修利用はエンジニア育成に限らず、ディレクターや営業マンの育成にもとても効果的です。
+
+                    <h3>エンジニアとの社内コミュニケーションロスをなくす</h3>
+                    WEB制作やデジタル広告に携わるディレクターや営業が、実務に詳しくないと社内でコミュニケーションロスが生じます。 彼ら非エンジニアが、WEB制作のフロント業務実務に関する総括的な知識を持つことができれば、WEBに関わるあらゆる業務の社内円滑化を図ることができます。
+
+                    <h3>入社後よりも、入社前に。２つの大きなメリット</h3>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 col-sm-12">
+                            <div class="company_col__2">
+                                <h4 class="style-2">即戦力へスピードアップ!!</h4>
+                                企業としては、新卒は入社後には即戦力になってほしいものです。 営業であればマナー研修や商品の理解、OJTなど、入社後はいち早く即戦力にするために教育します。 もし内定者時点でWEBの実務を教育することができれば、入社後の即戦力までのスピードが一気に加速します。
+
+                                <h4 class="style-2">内定辞退の防止策!!</h4>
+                                せっかく企業が内定を出して、入社意思確認がとれたにもかかわらずギリギリのタイミングで辞退され、別の企業に流れてしまうことは往々にしてあります。 そのような辞退を防ぐためにも同期との交流や企業と内定者との接点を磨くことはとても重要です。 同期との宿泊型の研修であれば、より結束力が高まります。
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>『講師派遣型コース』など企業様別にカスタマイズが可能</h3>
+                    <p>教室に通っての受講・宿泊が困難という方には、講師が直接企業様に訪問する『講師派遣型コース』のご案内を行っております。（人数応相談）<br/>
+                        受講スタイルや期間、研修内容に関しては企業様のご要望に合わせてカスタマイズが可能です。まずはご相談ください。</p>
+                    <table class="pale_purple" summary="受講スタイル">
+                        <caption>【選べる受講スタイル】</caption>
+                        <tbody>
+                            <tr>
+                                <th>教室受講型（通い）/（合宿）</th>
+                                <td>教室に通って受講、または期間中、現地に滞在して受講。</td>
+                            </tr>
+                            <tr>
+                                <th>オンライン型</th>
+                                <td>全てオンラインで受講。</td>
+                            </tr>
+                            <tr>
+                                <th>講師派遣型</th>
+                                <td>講師が企業様に訪問。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>助成金の可能性も</h3>
+                    たとえ内定者でも、アルバイトとして契約して雇用保険も適用すれば、助成金適用の可能性があります。
+
+                    <hr/>
+
+                    <h3>お問い合わせフォーム</h3>
+                    <p>詳しくお話を聞いてみたい方やご相談をしたい方は、下記フォームよりお問い合わせください。</p>
+                    <hr>{% include "/elements/form_company.twig" %}<br>
+                </section>
+
+            </div>
+            <div class="col-md-3">
+              {% include "/elements/sidebar.twig" %}
+            </div>
+          </div>
+        </article>
+    {% endblock %}

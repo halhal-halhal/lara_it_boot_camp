@@ -1,0 +1,111 @@
+{% extends "/layouts/base.twig" %}
+{% block content %}
+    {% include "/elements/header.twig" %}
+    <!-- FV -->
+    <header id="canvas-container">
+        <div class="parallax-picture all-bg">
+            <div class="top_pic">
+                <article id="recommend-pic" class="parallax-pic_inner">
+                    <h1>生徒を採用したい</h1>
+                    <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+                        <defs>
+                            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+                        </g>
+                    </svg>
+                </article>
+            </div>
+        </div>
+    </header>
+    <!-- ./FV -->
+    <!-- 固定ページテンプレート -->
+    <article id="page-wrapper">
+        <!-- Page Content -->
+        <div class="container">
+            <hr class="style-hr">
+            <!-- 固定ページテンプレート -->
+                 <div class="row">
+                        <!-- Content -->
+                        <div class="col-md-9 page-style">
+            <section class="page-content">
+                <!-- pタグ自動挿入制御 -->
+                <article class="company_content">
+                    <h2>こんな企業様に</h2>
+                    <p class="lead">IBCの卒業生は未経験者に限らず、バラエティに富んだ様々なバックグラウンドを持っています。</p>
+                    <ul class="disc">
+                        <li class="txt-16">SEをやっていてフロント言語を学びに来た人</li>
+                        <li class="txt-16">スキルUPのためWordPressのみ集中的に学びに来た人</li>
+                        <li class="txt-16">映像制作をしていた人</li>
+                        <li class="txt-16">WEBディレクターをしていた人</li>
+                        <li class="txt-16">広告営業をしていた人</li>
+                        <li class="txt-16">アドプランナーをしていた人</li>
+                        <li class="txt-16">ライターをしていた人 etc...</li>
+                    </ul>
+                    <p>またIBCでは、就職転職を求める卒業生の採用ハードルを下げるため、業界最安値といえる採用決定手数料にてご紹介させて頂いております。<br/>
+                        <small>※採用にいたらなかった場合は、費用が発生することは一切ございません。</small>
+                    </p>
+                    <p>卒業生のスキルやパーソナリティについて興味がある人事担当者様は、まずは下記のフォームよりメール登録をお願いします。<br/>
+                        気になる人がいたら、簡単にオファーをかけて、実際にコンタクトをとったり面接することが可能です。</p>
+
+                    <hr/>
+
+                    <h3>登録・解除フォーム</h3>
+                    <p class="lead">ご登録されたいE-mailアドレスを入力し、ご希望の項目ボタンを押してください。<br>
+                        <small>※解除もワンクリックで可能です。</small>
+                    </p>
+                    <!-- 登録フォーム -->
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <form action="https://i-magazine.jp/bm/p/f/tf.php?id=cajonimail" method="post">
+                                <div class="row form-group">
+                                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                                        <div class="col-xs-12">
+                                            <input class="form-control" type="text" type="email" name="form[mail]" required="" placeholder="メールアドレスを入力して登録">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                                        <div class="col-xs-12">
+                                            <input type="submit" id="submit_03" name="regist" value="登録" class="btn_d"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-xs-12">
+                                        <div class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-6">
+                                            <input class="btn btn-default btn-lg" name="reject" type="submit" value="解除"/>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-6">
+                                            <input class="btn btn-default btn-lg" name="modify" type="submit" value="編集"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 登録フォーム -->
+                    <br>
+                    <hr/>
+
+                    <h3>お問い合わせフォーム</h3>
+                    <p>本格的に生徒の採用活動をしたい企業様には、弊社の採用コンサルタントが担当し、企業情報を生徒へ紹介したり、採用企画を生徒のカリュキュラムに提案することなどが可能です。<br>
+                        詳しくお話を聞いてみたい方は、下記フォームよりお問い合わせください。</p>
+
+                    {% include "/elements/form_company.twig" %}
+                    <br>
+                    <hr>
+                    <p>
+                        LINE@ LINE@では卒業後のお仕事や島のシェアハウスの風景など非公開情報を公開します！
+                    </p>
+                </section>
+            </div>
+            <div class="col-md-3">
+              {% include "/elements/sidebar.twig" %}
+            </div>
+          </div>
+        </article>
+
+    {% endblock %}
