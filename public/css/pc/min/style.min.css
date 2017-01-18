@@ -4731,5 +4731,21 @@ section.page-content div.free_airline span{
   margin-left: 1em;
 }
 section.page-content div.free_airline{
-  font-size: 1.2em;  
+  font-size: 1.2em;
+}
+
+
+section.page-content div.for_lady_campaign{
+  font-size: 1.2em;
+}
+section.page-content div.for_lady_campaign table td{
+  padding-left: 1.5em;
+}
+section.page-content div.for_lady_campaign table td span{
+  font-size: 0.8em;
+}
+section.page-content div.for_lady_campaign table th{
+  width: 5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
