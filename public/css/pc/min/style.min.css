@@ -4723,3 +4723,13 @@ section.page-content div.for_student_campaign li.campaign_value{
   margin-bottom: 1.5em;
   font-size: 1.1em;
 }
+
+
+section.page-content div.free_airline span{
+  color: red;
+  font-size: 0.8em;
+  margin-left: 1em;
+}
+section.page-content div.free_airline{
+  font-size: 1.2em;  
+}
