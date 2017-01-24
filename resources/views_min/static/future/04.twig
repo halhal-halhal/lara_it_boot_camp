@@ -1,26 +1,64 @@
-{% extends "/layouts/base.twig" %}
-{% block content %}
-{% include "/elements/header.twig" %}
-<h1>IBC認定</h1>
-<br>
-<h3>IBC認定とは…</h3>
-<p>業務委託を受ける 職業斡旋を受ける サポートメンバーになる</p>
-<p>IBCのカリキュラムを修了した証としてIBC認定が発行できます！</p>
-<p>ITブートキャンプのカリキュラムを全て修了し、現場で活躍できるスキルを修得したと判断した方にのみ与えられる認定です。認定されることで、弊社からの『業務委託』『職業斡旋』を受けることが出来るようになり、ITブートキャンプの『サポートメンバー』になることも可能になります。 また、Web制作の実力を証明する証として認定証を発行することも可能です。 認定証を発行することでIBC公式認定マークをポートフォリオや自分のWebサービスへの掲載を自由にすることが可能になります。</p>
-<br>
-<p>IBC認定を受ける為の条件</p>
-<p>IBCの全カリキュラムを修了後、最終的に講師が制作物を確認し合格と判断した方。  認定を受けるには各コースのカリキュラムを全て修了することが必須となります。</p>
-<br>
-<p>IBC認定証明について</p>
-<p>認定料</p>
-<p>無料</p>
-<p>認定証発行</p>
-<p>5,000円（税別） * 郵送費込み</p>
-<p>認定証が必要な方は、弊社より認定証を発行致しますのでIBC認定後に申請を行って下さい。 * 認定証を紛失された場合、再発行には費用が発生しますのでご注意下さい。</p>
-<br>
-<hr>
-<p><a href="/future_04/contact/">詳しくはこちら</a></p>
-<br>
-<hr>
-<p>LINE@  LINE@では卒業後のお仕事や島のシェアハウスの風景など非公開情報を公開します！</p>
+{% extends "/layouts/base.twig" %} {% block content %} {% include "/elements/header.twig" %}
+<!-- FV -->
+<header id="canvas-container">
+  <div class="parallax-picture all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>IBC認定</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-md-9 page-style">
+        <!-- 固定ページテンプレート -->
+        <section class="page-content">
+          <div class="future04">
+
+            <h2>IBC認定とは…</h2>
+            <h5>業務委託を受ける 職業斡旋を受ける サポートメンバーになる</h5>
+            <p>IBCのカリキュラムを修了した証としてIBC認定が発行できます！</p>
+            <p>ITブートキャンプのカリキュラムを全て修了し、<font color="red">現場で活躍できるスキルを修得したと判断した方にのみ</font>与えられる認定です。認定されることで、弊社からの<b>『業務委託』『職業斡旋』</b>を受けることが出来るようになり、ITブートキャンプの<b>『サポートメンバー』</b>になることも可能になります。 また、Web制作の実力を証明する証として認定証を発行することも可能です。 認定証を発行することでIBC公式認定マークをポートフォリオや自分のWebサービスへの掲載を自由にすることが可能になります。</p>
+            <br>
+            <h3>IBC認定を受ける為の条件</h3>
+            <p>IBCの全カリキュラムを修了後、最終的に講師が制作物を確認し合格と判断した方。  認定を受けるには各コースのカリキュラムを全て修了することが必須となります。</p>
+            <br>
+            <h3>IBC認定証明について</h3>
+            <p>認定料</p>
+            <p><font color="red">無料</font></p><br>
+            <p>認定証発行</p>
+            <p><b>5,000円（税別） * 郵送費込み</b></p><br>
+            <p>認定証が必要な方は、弊社より認定証を発行致しますのでIBC認定後に申請を行って下さい。</p>
+            <p><font color="red"> * 認定証を紛失された場合、再発行には費用が発生しますのでご注意下さい。</font></p>
+            <br>
+            <hr>
+            <p>LINE@  LINE@では卒業後のお仕事や島のシェアハウスの風景など非公開情報を公開します！</p>
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+
+          </div>
+          {% include "/elements/contact_link.twig" %}
+        </section>
+
+      </div>
+      <div class="col-md-3">
+        {% include "/elements/sidebar.twig" %}
+      </div>
+    </div>
+  </article>
 {% endblock %}

@@ -4756,12 +4756,20 @@ section.page-content div.for_lady_campaign table th{
   padding-bottom: 1em;
 }
 
+div.struggles_page{
+  font-size: 1.15em;
+}
+
 div.struggles_page div.struggles_ep{
   padding: 2em;
 }
 
 div.struggles_page div.struggles_content{
   margin: 2em 0;
+}
+
+div.voice_page{
+  font-size: 1.15em;
 }
 
 div.voice_page span.male{
@@ -4778,4 +4786,34 @@ div.voice_page div.voice_content{
 
 div.voice_page div.voice_content p{
   margin-left: 1.5em;
+}
+
+div.future01{
+  font-size: 1.15em;
+}
+
+div.future02{
+  font-size: 1.15em;
+}
+
+div.future03{
+  font-size: 1.15em;
+}
+div.future03 table th{
+  padding: 0 1em;
+}
+div.future03 div.check{
+  font-size: .75em;
+}
+
+div.future04{
+  font-size: 1.15em;
+}
+
+div.interview{
+  font-size: 1.15em;
+}
+
+div.curriculum{
+  font-size: 1.15em;
 }
