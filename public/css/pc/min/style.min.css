@@ -4733,7 +4733,13 @@ section.page-content div.free_airline span{
 section.page-content div.free_airline{
   font-size: 1.2em;
 }
+section.page-content div.camp{
+  font-size: 1.2em;
+}
 
+section.page-content div.school{
+  font-size: 1.2em;
+}
 
 section.page-content div.for_lady_campaign{
   font-size: 1.2em;
@@ -4748,4 +4754,28 @@ section.page-content div.for_lady_campaign table th{
   width: 5em;
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+div.struggles_page div.struggles_ep{
+  padding: 2em;
+}
+
+div.struggles_page div.struggles_content{
+  margin: 2em 0;
+}
+
+div.voice_page span.male{
+  color: rgb(17, 55, 217);
+}
+
+div.voice_page span.female{
+  color: rgb(187, 45, 88);
+}
+
+div.voice_page div.voice_content{
+  margin-bottom: 2em;
+}
+
+div.voice_page div.voice_content p{
+  margin-left: 1.5em;
 }
