@@ -54,13 +54,35 @@
           </ul>
         </li>
         <li><a href="/faq/">FAQ</a></li>
+        {% if user_data | length > 0 %}
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">ログイン/新規登録<b class="caret"></b></a>
+          {%  if user_data.user_role == 2 %}
+          <a href="/admin/" class="dropdown-toggle" data-toggle="dropdown">管理画面<b class="caret"></b></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/login/">ログイン</a></li>
-            <li><a href="/signup/">新規登録</a></li>
-          </ul>
-        </li>
+            <li><a href="/admin/">管理画面トップ</a></li>
+            <li><a href="/admin/user_list/">ユーザーリスト</a></li>
+            <li><a href="/admin/message_list/index">メッセージ一覧</a></li>
+            <li><a href="/admin/send_message/">メッセージ送信</a></li>
+            <li><a href="/admin/caliculam_list/">カリキュラム一覧</a></li>
+            {% else %}
+            <a href="/mypage/" class="dropdown-toggle" data-toggle="dropdown">マイページ<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/mypage/">マイページトップ</a></li>
+              <li><a href="/mypage/caliculam_list/">カリキュラム申し込み</a></li>
+              <li><a href="/mypage/message_list/">メッセージ</a></li>
+              {% endif %}
+              <li><a href="/logout/">ログアウト</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li class="dropdown">
+            <a href="/login/" class="dropdown-toggle" data-toggle="dropdown">ログイン/新規登録<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/login/">ログイン</a></li>
+              <li><a href="/signup/">新規登録</a></li>
+            </ul>
+          </li>
+          {% endif %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">企業様<b class="caret"></b></a>
           <ul class="dropdown-menu" role="menu">
