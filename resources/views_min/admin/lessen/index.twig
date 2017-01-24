@@ -1,27 +1,74 @@
 {% extends "/layouts/base.twig" %}
 {% block content %}
 {% include "/elements/header.twig" %}
-{% include "/elements/navigation.twig" %}
-<div class="container two-column">
-    <div class="row">
-        {% include "/elements/admin_left_column.twig" %}
-        <div class="col-sm-9 content">
-            <h1>レッスン一覧ページ</h1>
-            {% if lessen_data_list |length < 1 %}
-            <p>レッスンはありません。</p>
-            {% else %}
-            {% for lessen_data in lessen_data_list %}
-            <p>レッスン画像: <img src="/uploads/lessen/{{lessen_data['lessen_image']}}" alt="" width="80"></p>
-            <p>レッスンタイトル: {{lessen_data["lessen_title"]}}</p>
-            <p>レッスンPRテキスト: {{lessen_data["lessen_pr_text"]}}</p>
-            <p>レッスンテキスト: {{lessen_data["lessen_text"] |slice(0, 30)}}&nbsp;...</p>
-            <p>レッスン更新日時: {{lessen_data["updated_at"] |date("Y年m月d日 H時i分")}}</p>
-            <p><a href="/admin/lessen/edit/{{lessen_data['lessen_id']}}">レッスンを編集する</a></p>
-            <hr>
-            {% endfor %}
-            {% endif %}
-            <p><a href="/admin/lessen/edit/">レッスンを作成する</a></p>
-        </div>
+<header id="canvas-container">
+  <div class="parallax-picture  all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>レッスン</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
     </div>
-</div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <!-- pタグ自動挿入制御 -->
+    <article class="company_content">
+      <div class="row">
+        <div class="col-sm-3">
+          {% include "/elements/admin_left_column.twig" %}
+        </div>
+        <div class="col-sm-9">
+          <div class="panel panel-default">
+            <div class=panel-body>
+              <h2>レッスン一覧ページ</h2>
+              {% if lessen_data_list | length < 1 %}
+              <p>レッスンはありません。
+              </p>
+              {% else %}
+              {% for lessen_data in lessen_data_list %}
+              <p>レッスン画像:
+                <img src="/uploads/lessen/{{lessen_data['lessen_image']}}" alt width=80>
+              </p>
+              <p>レッスンタイトル:
+                {{lessen_data["lessen_title"]}}
+              </p>
+              <p>レッスンPRテキスト:
+                {{lessen_data["lessen_pr_text"]}}
+              </p>
+              <p>レッスンテキスト:
+                {{lessen_data["lessen_text"] |slice(0, 30)}}&nbsp;...
+              </p>
+              <p>レッスン更新日時:
+                {{lessen_data["updated_at"] |date("Y年m月d日 H時i分")}}
+              </p>
+              <p>
+                <a href="/admin/lessen/edit/{{lessen_data['lessen_id']}}">レッスンを編集する</a>
+
+              </p><hr>{% endfor %}
+              {% endif %}
+              <p>
+                <a href="/admin/lessen/edit/">レッスンを作成する</a>
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</article>
 {% endblock %}

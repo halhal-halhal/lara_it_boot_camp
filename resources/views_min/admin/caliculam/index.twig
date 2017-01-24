@@ -1,29 +1,76 @@
 {% extends "/layouts/base.twig" %}
 {% block content %}
 {% include "/elements/header.twig" %}
-{% include "/elements/navigation.twig" %}
-<div class="container two-column">
-    <div class="row">
-        {% include "/elements/admin_left_column.twig" %}
-        <div class="col-sm-9 content">
-            <h1>カリキュラム一覧ページ</h1>
-            {% if caliculam_data_list |length < 1 %}
-            <p>申し込めるカリキュラムはありません。</p>
-            {% else %}
-            {% for caliculam_data in caliculam_data_list %}
-            <p>カリキュラム画像: <img src="/uploads/caliculam/{{caliculam_data['caliculam_image']}}" alt="" width="80"></p>
-            <p>カリキュラムタイトル: {{caliculam_data["caliculam_title"]}}</p>
-            <p>カリキュラム価格: {{caliculam_data["caliculam_price"]}}</p>
-            <p>カリキュラムPRテキスト: {{caliculam_data["caliculam_pr_text"]}}</p>
-            <p>カリキュラムテキスト: {{caliculam_data["caliculam_text"] |slice(0, 30)}}&nbsp;...</p>
-            <p>カリキュラム更新日時: {{caliculam_data["updated_at"] |date("Y年m月d日 H時i分")}}</p>
-            <p><a href="/admin/caliculam/{{caliculam_data['caliculam_id']}}/">カリキュラムを見る</a></p>
-            <p><a href="/admin/caliculam/edit/{{caliculam_data['caliculam_id']}}/">カリキュラムを編集する</a></p>
-            <hr>
-            {% endfor %}
-            {% endif %}
-            <p><a href="/admin/caliculam/edit/">カリキュラムを作成する</a></p>
-        </div>
+<header id="canvas-container">
+  <div class="parallax-picture  all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>カリキュラム一覧</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
     </div>
-</div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <!-- pタグ自動挿入制御 -->
+    <article class="company_content">
+      <div class="row">
+        <div class="col-sm-3">
+          {% include "/elements/admin_left_column.twig" %}
+        </div>
+        <div class="col-sm-9">
+          <div class="panel panel-default">
+            <div class=panel-body>
+              <h2>カリキュラム一覧ページ</h2><hr>
+              {% if caliculam_data_list | length < 1 %}
+              <p>申し込めるカリキュラムはありません。</p>
+              {% else %}
+              {% for caliculam_data in caliculam_data_list %}
+              <h3>
+                {{caliculam_data["caliculam_title"]}}
+              </h3>
+              <div>
+                <img src="/uploads/caliculam/{{caliculam_data['caliculam_image']}}" alt width=80>
+              </div>
+              <p>価格:
+                {{caliculam_data["caliculam_price"]}}
+              </p>
+              <p>PRテキスト:
+                {{caliculam_data["caliculam_pr_text"]}}
+              </p>
+              <p>テキスト:
+                {{caliculam_data["caliculam_text"] |slice(0, 30)}}&nbsp;...
+              </p>
+              <p>更新日時:
+                {{caliculam_data["updated_at"] |date("Y年m月d日 H時i分")}}
+              </p>
+              <br>
+              <p>
+                <a href="/admin/caliculam/{{caliculam_data['caliculam_id']}}/">詳細</a>
+                /
+                <a href="/admin/caliculam/edit/{{caliculam_data['caliculam_id']}}/">編集</a>
+              </p><hr>{% endfor %}
+              {% endif %}
+              <p>
+                <a href="/admin/caliculam/edit/">カリキュラムを作成する</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </article>
 {% endblock %}

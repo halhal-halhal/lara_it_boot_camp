@@ -4,7 +4,7 @@
   <div class="parallax-picture  all-bg">
     <div class="top_pic">
       <article id="recommend-pic" class="parallax-pic_inner">
-        <h1>プロフィール変更</h1>
+        <h1>ユーザー情報変更</h1>
         <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
           <defs>
             <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
@@ -27,20 +27,36 @@
       <div class="container two-column">
         <div class=row>
 
-          <div class="col-sm-12 single-top"></div>{% include "/elements/mypage_left_column.twig" %}
+          <div class="col-sm-12 single-top"></div>
+          <div class="col-sm-3">{% include "/elements/admin_left_column.twig" %}</div>
           <div class="col-sm-9 content">
             <div class="panel panel-default">
               <div class=panel-body>
-                <h2>プロフィール編集</h2>
+                <h2>ユーザー編集</h2>
                 <section>
-                  <form action=/mypage/profile/confirm enctype=multipart/form-data method=POST>
+                  <form action=/admin/user/confirm enctype=multipart/form-data method=POST>
                     <div class="row input-area">
                       <div class=col-sm-4>
-                        <label for>プロフィール画像</label>
+                        <label for>ユーザー権限</label>
+                      </div>
+                      <div class=col-sm-8>
+                        <div class=user_role style="margin-bottom: 15px;">
+                          <select name="user_role">
+                            <option value="4" {% if(user_profile_data.user_role == 4) %}selected{% endif %}>生徒</option>
+                            <option value="3" {% if(user_profile_data.user_role == 3) %}selected{% endif %}>運営</option>
+                            <option value="2" {% if(user_profile_data.user_role == 2) %}selected{% endif %}>管理者</option>
+                            <option value="1" {% if(user_profile_data.user_role == 1) %}selected{% endif %}>所有者(デバッグ用？)</option>
+                          </select>
+                        <p class=small></p>
+                      </div>
+                    </div>
+                    <div class="row input-area">
+                      <div class=col-sm-4>
+                        <label for>ユーザー画像</label>
                       </div>
                       <div class=col-sm-8>
                         <div class="avatar_upload clearfix">
-                          <div class="avatar_content pull-left"><img src={% if(user_data.user_image != "no_image.png") %}'/uploads/profile/{{user_data.user_image}}'{% else %}{{ asset('img/ibc_logo.png') }}{% endif %} class=avatar width=100 height=100></div>
+                          <div class="avatar_content pull-left"><img src={% if(user_data.user_image != "no_image.png") %}'/uploads/profile/{{user_profile_data['user_image']}}'{% else %}{{ asset('img/ibc_logo.png') }}{% endif %} class=avatar width=100 height=100></div>
                           <div class="avatar_uploader clearfix"><input type=file name=user_image class=uploader id=upload_profile_image>
                             <p>※ 画像は2MB以内で<br>拡張子がjpeg(jpg)かpngの画像をご使用ください。</p>
                           </div>

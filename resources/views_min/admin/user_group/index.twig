@@ -1,34 +1,68 @@
 {% extends "/layouts/base.twig" %}
 {% block content %}
 {% include "/elements/header.twig" %}
-{% include "/elements/navigation.twig" %}
-<hr>
-<h1>管理画面ユーザーグループ一覧</h1>
-{% include "/elements/admin_left_column.twig" %}
-<hr>
-{% if user_group_data_list |length < 1 %}
-<p>表示できるユーザーグループはありません．</p>
-{% else %}
-{% for user_group_data in user_group_data_list %}
-<p>ID: {{user_group_data["user_group_id"]}}</p>
-<p>名前: <a href="/admin/user_group/detail/{{user_group_data['user_group_id']}}">{{user_group_data["user_group_name"]}}</a></p>
-{% endfor %}
-{% endif %}
-<h2>ユーザグループ登録</h2>
-<form action="/admin/user_group/confirm" method="POST">
-    <div class="row">
-        <div class="col-sm-4">
-            <lable for="">グループ名</lable>
-        </div>
-        <div class="col-sm-8">
-            <div class="" style="margin-bottom: 15px">
-                <input type="text" name="user_group_name" value="">
-            </div>
-        </div>
+<header id="canvas-container">
+  <div class="parallax-picture  all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>ユーザーグループ一覧</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
     </div>
-    <div class="btn-wrapper update">
-        <input class="btn btn-green" id="submit" type="submit" value="この情報で登録する">
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <!-- pタグ自動挿入制御 -->
+    <article class="company_content">
+      <div class="row">
+        <div class="col-sm-3">
+          {% include "/elements/admin_left_column.twig" %}
+        </div>
+        <div class="col-sm-9">
+          <div class="panel panel-default">
+            <div class=panel-body>
+              <h2>管理画面ユーザーグループ一覧</h2>
+
+              {% if user_group_data_list |length < 1 %}
+              <p>表示できるユーザーグループはありません．</p>
+              {% else %}
+                {% for user_group_data in user_group_data_list %}
+                <h3>[ID:{{user_group_data["user_group_id"]}}] <a href="/admin/user_group/detail/{{user_group_data['user_group_id']}}">{{user_group_data["user_group_name"]}}</a></h3>
+              {% endfor %}
+            {% endif %}
+            <h2>ユーザグループ登録</h2>
+            <form action="/admin/user_group/confirm" method="POST">
+              <div class="row">
+                <div class="col-sm-4">
+                  <lable for="">グループ名</lable>
+                </div>
+                <div class="col-sm-8">
+                  <div class="" style="margin-bottom: 15px">
+                    <input type="text" name="user_group_name" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrapper update">
+                <input class="btn btn-green" id="submit" type="submit" value="この情報で登録する">
+              </div>
+              <input type="hidden" name="_token" value="{{csrf_token}}">
+            </form>
+          </div>
+        </div>
+      </article>
     </div>
-    <input type="hidden" name="_token" value="{{csrf_token}}">
-</form>
+  </article>
 {% endblock %}

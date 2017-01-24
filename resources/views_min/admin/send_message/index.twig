@@ -1,9 +1,59 @@
 {% extends "/layouts/base.twig" %}
 {% block content %}
 {% include "/elements/header.twig" %}
-{% include "/elements/navigation.twig" %}
-<hr>
-<h1>メッセージ送信画面</h1>
-{% include "/elements/admin_left_column.twig" %}
-<p><a href="/admin/send_message/to_student">学生向け</a></p>
+<header id="canvas-container">
+  <div class="parallax-picture  all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>メッセージ一覧</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <!-- pタグ自動挿入制御 -->
+    <article class="company_content">
+      <div class="row">
+        <div class="col-sm-3">
+          {% include "/elements/admin_left_column.twig" %}
+        </div>
+        <div class="col-sm-9">
+          <div class="panel panel-default">
+            <div class=panel-body>
+              <h1>メッセージ一覧</h1><br>
+              {% if message_data_list | length < 1 %}
+              <p>表示できるメッセージはありません．</p>
+              {% else %}
+              {% for message in message_data_list %}
+              <p>ID:
+                {{message}}
+              </p>
+              <p>
+                Message:{{message_data_list[1]}}
+              </p>
+              {% endfor %}
+              {% endif %}
+                (Message未実装. SQL文が.twigファイルから実行できれば手っ取り早い. Logicでmessage_data_listが配列化されていないことが諸悪の根源？<br>
+               message_dataにidの数値のみ入ってる状態？→データが取得できない)
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</article>
 {% endblock %}

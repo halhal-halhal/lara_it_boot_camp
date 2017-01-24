@@ -1,50 +1,106 @@
 {% extends "/layouts/base.twig" %}
 {% block content %}
 {% include "/elements/header.twig" %}
-{% include "/elements/navigation.twig" %}
-<hr>
-<h1>管理画面ユーザー詳細</h1>
-{% include "/elements/admin_left_column.twig" %}
-<hr>
-<p><a href="/admin/user/{{account_data['user_id']}}/"><img src="/uploads/profile/{{account_data['user_image']}}" width="100" alt=""></a></p>
-<p>ID: {{account_data["user_id"]}}</p>
-<p>名前: {{account_data["user_real_name"]}}</p>
-<p>表示名: {{account_data["user_name"]}}</p>
-<p>メールアドレス: {{account_data["user_email"]}}</p>
-<p>生年月日: {{account_data["user_birthday"] |date("Y年m月d日")}}</p>
-<p>住所: {{account_data["user_address"]}}</p>
-<p>PR文: {{account_data["user_pr_text"] |nl2br}}</p>
-<p>登録日: {{account_data["created_at"]}}</p>
+<header id="canvas-container">
+  <div class="parallax-picture  all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>ユーザー一覧</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
 
-<h2>ユーザーグループ</h2>
-<form action="/admin/user/confirm" method="POST">
-    <div class="row">
-        <div class="col-sm-4">
-            <lable for="">グループ名</lable>
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <!-- pタグ自動挿入制御 -->
+    <article class="company_content">
+      <div class="row">
+        <div class="col-sm-3">
+          {% include "/elements/admin_left_column.twig" %}
         </div>
-        <div class="col-sm-8">
-            <div class="" style="margin-bottom: 15px">
-                <select name="user_user_group_id">
-                {% for user_group_data in user_group_data_list %}
-                {% if user_group_data["user_group_id"] == account_data["user_user_group_id"] %}
-                <option value="{{user_group_data['user_group_id']}}" selected>{{user_group_data["user_group_name"]}}</option>
-                {% else %}
-                <option value="{{user_group_data['user_group_id']}}">{{user_group_data["user_group_name"]}}</option>
-                {% endif %}
-                {% endfor %}
-                {% if account_data["user_user_group_id"] == 0 %}
-                <option value="0" selected>なし</option>
-                {% else %}
-                <option value="0">なし</option>
-                {% endif %}
-                </select>
+        <div class="col-sm-9">
+          <div class="panel panel-default">
+            <div class=panel-body>
+              <h2>ユーザー詳細</h2><hr>
+              <p>
+                <a href="/admin/user/{{account_data['user_id']}}/"><img src={% if(account_data.user_image != "no_image.png") %}'/uploads/profile/{{account_data.user_image}}'{% else %}{{ asset('img/ibc_logo.png') }}{% endif %} width=100 alt></a>
+              </p>
+              <p>ID:
+                {{account_data["user_id"]}}
+              </p>
+              <p>名前:
+                {{account_data["user_real_name"]}}
+              </p>
+              <p>表示名:
+                {{account_data["user_name"]}}
+              </p>
+              <p>メールアドレス:
+                {{account_data["user_email"]}}
+              </p>
+              <p>生年月日:
+                {{account_data["user_birthday"] |date("Y年m月d日")}}
+              </p>
+              <p>住所:
+                {{account_data["user_address"]}}
+              </p>
+              <p>PR文:
+                {{account_data["user_pr_text"] |nl2br}}
+              </p>
+              <p>登録日:
+                {{account_data["created_at"]}}
+              </p>
+              <br>
+              <a href="/admin/user/edit/{{account_data['user_id']}}">編集</a> / <a href="/admin/user/delete/{{account_data['user_id']}}"><font color="red">削除</font></a>
             </div>
+
+
+            <h2>ユーザーグループ</h2>
+            <form action="/admin/user/confirm" method="POST">
+              <div class="row">
+                <div class="col-sm-4">
+                  <lable for="">グループ名</lable>
+                </div>
+                <div class="col-sm-8">
+                  <div class="" style="margin-bottom: 15px">
+                    <select name="user_user_group_id">
+                      {% for user_group_data in user_group_data_list %}
+                      {% if user_group_data["user_group_id"] == account_data["user_user_group_id"] %}
+                      <option value="{{user_group_data['user_group_id']}}" selected>{{user_group_data["user_group_name"]}}</option>
+                      {% else %}
+                      <option value="{{user_group_data['user_group_id']}}">{{user_group_data["user_group_name"]}}</option>
+                      {% endif %}
+                      {% endfor %}
+                      {% if account_data["user_user_group_id"] == 0 %}
+                      <option value="0" selected>なし</option>
+                      {% else %}
+                      <option value="0">なし</option>
+                      {% endif %}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrapper update">
+                <input class="btn btn-green" id="submit" type="submit" value="この情報に更新する">
+              </div>
+              <input type="hidden" name="_token" value="{{csrf_token}}">
+              <input type="hidden" name="user_id" value="{{account_data['user_id']}}">
+            </form>
+          </div>
         </div>
+      </article>
     </div>
-    <div class="btn-wrapper update">
-        <input class="btn btn-green" id="submit" type="submit" value="この情報に更新する">
-    </div>
-    <input type="hidden" name="_token" value="{{csrf_token}}">
-    <input type="hidden" name="user_id" value="{{account_data['user_id']}}">
-</form>
+  </article>
 {% endblock %}
