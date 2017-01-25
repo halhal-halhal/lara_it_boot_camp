@@ -192,6 +192,10 @@ Route::group(["prefix" => "/admin/", "namespace" => "Admin", "middleware" => ["w
     Route::get("/user/{user_id}", "UserController@detail")->where("user_id", "[0-9]+");
     // ユーザー編集画面
     Route::post("/user/confirm", "UserController@confirm");
+    // ユーザー編集画面
+    Route::get("/user/edit/{user_id}", "ProfileController@input");
+    // プロフィール登録
+    Route::post("/user/confirm", "ProfileController@confirm");
     // ユーザー権限変更 (ajax)
     Route::post("/user/change_user_role", "UserController@changeUserRole");
     // ユーザー削除

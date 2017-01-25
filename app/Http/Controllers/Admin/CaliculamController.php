@@ -9,6 +9,7 @@ use Request;
 use Redirect;
 use Session;
 use Validator;
+use DB;
 
 class CaliculamController extends Controller
 {

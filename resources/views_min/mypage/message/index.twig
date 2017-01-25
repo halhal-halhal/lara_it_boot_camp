@@ -28,13 +28,11 @@
     <!-- pタグ自動挿入制御 -->
     <article class="company_content">
       <div class="row">
-        <div class="col-sm-3">
-          {% include "/elements/admin_left_column.twig" %}
-        </div>
+        <div class="col-sm-12 single-top"></div>{% include "/elements/mypage_left_column.twig" %}
         <div class="col-sm-9">
           <div class="panel panel-default">
             <div class=panel-body>
-              <h2>メッセージ一覧</h2>
+              <h1>メッセージ一覧</h1><br>
               {% if message_data_list | length < 1 %}
               <p>表示できるメッセージはありません．</p>
               {% else %}
@@ -42,21 +40,14 @@
               <p>ID:
                 {{message}}
               </p>
+              <p>test:{{message.message_content_id}}</p>
               <p>
                 Message:{{message_data_list[1]}}
               </p>
               {% endfor %}
               {% endif %}
-
-              <p>
-              (Message未実装. SQL文が.twigファイルから実行できれば手っ取り早い. Logicでmessage_data_listが配列化されていないことが原因でエラー？)
-             </p>
-
-              <hr>
-              <h2>メッセージ送信</h2>
-
-              <p><a href="/admin/send_message/to_student">学生向け</a></p>
-              <hr>
+               (Message未実装. SQL文が.twigファイルから実行できれば手っ取り早い. Logicでmessage_data_listが配列化されていないことが諸悪の根源？<br>
+               message_dataにidの数値のみ入ってる状態？→データが取得できない)
             </div>
           </div>
         </div>

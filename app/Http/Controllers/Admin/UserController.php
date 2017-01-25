@@ -7,6 +7,8 @@ use App\Http\Logics\UserLogic;
 use App\Http\Logics\UserGroupLogic;
 use Request;
 use Redirect;
+use DB;
+
 
 class UserController extends Controller
 {

@@ -7,6 +7,7 @@ use App\Http\Logics\LessenLogic;
 use App\Http\Logics\CaliculamLogic;
 use Request;
 use Redirect;
+use DB;
 
 class LessenController extends Controller
 {
