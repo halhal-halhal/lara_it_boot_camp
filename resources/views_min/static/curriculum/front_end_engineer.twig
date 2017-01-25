@@ -1,36 +1,64 @@
-{% extends "/layouts/base.twig" %}
-{% block content %}
-{% include "/elements/header.twig" %}
-<h1>フロントエンドエンジニア</h1>
+{% extends "/layouts/base.twig" %} {% block content %} {% include "/elements/header.twig" %}
+<!-- FV -->
+<header id="canvas-container">
+  <div class="parallax-picture all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>フロントエンドエンジニア</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-md-9 page-style">
+        <!-- 固定ページテンプレート -->
+        <section class="page-content">
+<h2>フロントエンドエンジニア</h2>
 <br>
 {% include "/elements/comparison_table.twig"%}
 <br>
 <hr>
-<h3>カリキュラム詳細</h3>
-<p>１章        </p>
+<h2>カリキュラム詳細</h2>
+<h3>１章        </h3>
 <p>HTML+CSS基礎    WEBサイト構築の基礎を学びます。</p>
 <p>１章課題    HTMLスケッチ    WEBサイトを構築する練習をします。</p>
 <br>
-<p>２章        </p>
+<h3>２章        </h3>
 <p>Illstrator+Photoshop    デザインのパーツをつくる練習をします。</p>
 <p>２章課題    カンプ制作  WEBサイトの設計図をつくります。</p>
 <br>
-<p>３章        </p>
+<h3>３章        </h3>
 <p>Bootstrap   WEBサイト作りをするためのテンプレートの活用を学びます。</p>
 <p>Webサイト制作   実際にPCサイトの制作・構築をします。</p>
 <p>レスポンシブサイト制作  スマートフォン対応したWEB制作・構築をします。</p>
 <p>３章課題    Bootstrapサイト構築 Bootstrap(WEBサイト作りをするためのテンプレート)を活用してWEB制作・構築をします。</p>
 <br>
-<p>４章        </p>
+<h3>４章        </h3>
 <p>wordpress環境開発   WordPressとは CMS(コンテンツ・マネジメント・システム)と呼ばれるソフトウェアの１つです。 世界のトップ1000万WEBサイトのうち、37%がCMSを使っているが、WordPressはその60%のシェア率と圧倒的な人気を博しています。 WordPressを活用できるとエンジニアの市場価値は一気にあがります。</p>
 <p>wordpress基礎</p>
 <p>４章課題    wordpressオリジナルテーマ化</p>
 <br>
-<p>制作課題        </p>
+<h3>制作課題        </h3>
 <p>サイト制作 4課題    身につけた実力を存分に試してみましょう。つくった制作物は講師にチェックしてもらい、アドバイスをもらいましょう。</p>
 <br>
 <hr>
-<h3>こんなサイトがつくれるようになります</h3>
+<h2>こんなサイトがつくれるようになります</h2>
 <p>《 実施期間 》</p>
 <p>いつからでもスタート可能です。ご希望のスタート日から8週間(滞在4週間+オンライン4週間)でご参加頂けます。 ※滞在+オンラインの組み合わせは自由。8週間を全て滞在型に割り振ることも可能です。 (例) 【滞在】8週間+【オンライン】0週間 【滞在】7週間+【オンライン】1週間 * 宿泊先や教室の空席の関係上、ご希望に添えない場合がございます。 まずはお気軽にご相談ください。</p>
 <br>
@@ -47,8 +75,15 @@
 <p>【宿泊費について】 参加費以外に別途、宿泊費をご用意いただく必要がございます。 弊社にて宿泊先の手配をご希望の方は面談にてお申し付け下さい。 石垣島校 一泊2,000円〜※ペット可有り 新潟校 一泊1,500円〜※ペット可無し 島根校 一泊1,500円〜※ペット可無し 宿泊先状況によりご希望の宿泊先の手配が難しい場合がございますので、 お早めにお問い合わせ下さい。</p>
 <br>
 <hr>
-<p><a href="/front_end_engineer/contact/">詳しくはこちら</a></p>
-<br>
-<hr>
+
 <p>LINE@  LINE@では卒業後のお仕事や島のシェアハウスの風景など非公開情報を公開します！</p>
+  {% include "/elements/contact_link.twig" %}
+</section>
+
+</div>
+<div class="col-md-3">
+{% include "/elements/sidebar.twig" %}
+</div>
+</div>
+</article>
 {% endblock %}

@@ -1,7 +1,35 @@
-{% extends "/layouts/base.twig" %}
-{% block content %}
-{% include "/elements/header.twig" %}
-<h1>Ruby</h1>
+{% extends "/layouts/base.twig" %} {% block content %} {% include "/elements/header.twig" %}
+<!-- FV -->
+<header id="canvas-container">
+  <div class="parallax-picture all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>Ruby</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-md-9 page-style">
+        <!-- 固定ページテンプレート -->
+        <section class="page-content">
+<h2>Ruby</h2>
 <br>
 {% include "/elements/comparison_table.twig"%}
 <br>
@@ -58,8 +86,14 @@
 <p>また、質問は24時間可能です。週に2回のビデオチャットでは画面共有を通して質問ができるので、テキストだけではわからない部分を視覚的に理解することが可能です。（※営業時間外の返信は翌営業日となります。）</p>
 <br>
 <hr>
-<p><a href="/ruby/contact/">詳しくはこちら</a></p>
-<br>
-<hr>
 <p>LINE@  LINE@では卒業後のお仕事や島のシェアハウスの風景など非公開情報を公開します！</p>
+  {% include "/elements/contact_link.twig" %}
+</section>
+
+</div>
+<div class="col-md-3">
+{% include "/elements/sidebar.twig" %}
+</div>
+</div>
+</article>
 {% endblock %}

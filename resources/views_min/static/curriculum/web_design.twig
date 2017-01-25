@@ -1,9 +1,35 @@
-{% extends "/layouts/base.twig" %}
-{% block content %}
-{% include "/elements/header.twig" %}
-<h1>Webデザイン</h1>
-<br>
-<br>
+{% extends "/layouts/base.twig" %} {% block content %} {% include "/elements/header.twig" %}
+<!-- FV -->
+<header id="canvas-container">
+  <div class="parallax-picture all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>Webデザイン</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-md-9 page-style">
+        <!-- 固定ページテンプレート -->
+        <section class="page-content">
+<h2>Webデザイン</h2>
 {% include "/elements/comparison_table.twig"%}
 <br>
 <hr>
@@ -50,8 +76,14 @@
 <p>【宿泊費について】 参加費以外に別途、宿泊費をご用意いただく必要がございます。 弊社にて宿泊先の手配をご希望の方は面談にてお申し付け下さい。 石垣島校 一泊2,000円〜※ペット可有り 新潟校 一泊1,500円〜※ペット可無し 島根校 一泊1,500円〜※ペット可無し 宿泊先状況によりご希望の宿泊先の手配が難しい場合がございますので、 お早めにお問い合わせ下さい。</p>
 <br>
 <hr>
-<p><a href="/web_design/contact/">詳しくはこちら</a></p>
-<br>
-<hr>
 <p>LINE@  LINE@では卒業後のお仕事や島のシェアハウスの風景など非公開情報を公開します！</p>
+  {% include "/elements/contact_link.twig" %}
+</section>
+
+</div>
+<div class="col-md-3">
+{% include "/elements/sidebar.twig" %}
+</div>
+</div>
+</article>
 {% endblock %}

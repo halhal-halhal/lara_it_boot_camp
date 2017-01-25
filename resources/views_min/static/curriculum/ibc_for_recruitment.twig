@@ -1,7 +1,35 @@
-{% extends "/layouts/base.twig" %}
-{% block content %}
-{% include "/elements/header.twig" %}
-<h1>就活ITブートキャンプ</h1>
+{% extends "/layouts/base.twig" %} {% block content %} {% include "/elements/header.twig" %}
+<!-- FV -->
+<header id="canvas-container">
+  <div class="parallax-picture all-bg">
+    <div class="top_pic">
+      <article id="recommend-pic" class="parallax-pic_inner">
+        <h1>就活ブートキャンプ</h1>
+        <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z"/>
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="50" y="0" fill="#fff"/>
+          </g>
+        </svg>
+      </article>
+    </div>
+  </div>
+</header>
+<!-- ./FV -->
+
+<!-- 固定ページテンプレート -->
+<article id="page-wrapper">
+  <!-- Page Content -->
+  <div class="container">
+    <hr class="style-hr">
+    <div class="row">
+      <!-- Content -->
+      <div class="col-md-9 page-style">
+        <!-- 固定ページテンプレート -->
+        <section class="page-content">
+<h2>就活ITブートキャンプ</h2>
 <br>
 <p>〜IT業界への就職を目指す学生の皆さんへ〜</p>
 <p>未経験からITエンジニアのスキル・知識を習得する短期集中プログラム『ITブートキャンプ』が、</p>
@@ -182,4 +210,13 @@
     <input type="submit" value="送信する">
     <input type="hidden" name="_token" value="{{csrf_token}}">
 </form>
+  {% include "/elements/contact_link.twig" %}
+</section>
+
+</div>
+<div class="col-md-3">
+{% include "/elements/sidebar.twig" %}
+</div>
+</div>
+</article>
 {% endblock %}
