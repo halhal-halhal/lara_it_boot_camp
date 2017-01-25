@@ -4817,3 +4817,8 @@ div.interview{
 div.curriculum{
   font-size: 1.15em;
 }
+
+section.page-content div.notice p{
+  color: red;
+  font-size: 0.75em;
+}
