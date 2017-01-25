@@ -369,8 +369,10 @@ class UserLogic
                 "user_birthday" => (isset($input["user_birthday"]) && !empty($input["user_birthday"])) ? $input["user_birthday"] : "",
                 "user_gender" => (isset($input["user_gender"]) && !empty($input["user_birthday"])) ? $input["user_gender"] : "",
                 "user_address" => (isset($input["user_address"]) && !empty($input["user_address"])) ? $input["user_address"] : "",
+                "user_role" => (isset($input["user_role"]) && !empty($input["user_role"])) ? $input["user_role"] : "4",
+                "user_user_group_id" => (isset($input["user_user_group_id"]) && !empty($input["user_user_group_id"])) ? $input["user_user_group_id"] : "",
                 "user_pr_text" => (isset($input["user_pr_text"]) && !empty($input["user_pr_text"])) ? $input["user_pr_text"] : "",
-                "updated_at" => date("Y-m-d H:i:s"),]
+              "updated_at" => date("Y-m-d H:i:s"),]
         );
 
         if (count($result) < 1) {

@@ -34,11 +34,16 @@
         <div class="col-sm-9">
           <div class="panel panel-default">
             <div class=panel-body>
+              <h2>{{user_group_data['user_group_name']}}</h2>
               <hr>
-              <p>ID: {{user_group_data["user_group_id"]}}</p>
+              <h4>所属ユーザー</h4>
+              <ul>
               {% for group_user_data in group_user_data_list %}
-              <p>ユーザー名: <a href="/admin/user/{{group_user_data['user_id']}}">{{group_user_data["user_name"]}}</a></p>
+              <li><a href="/admin/user/{{group_user_data['user_id']}}">{{group_user_data["user_name"]}}</a></li>
             {% endfor %}
+          </ul>
+          <h4>詳細情報</h4>
+          <p>ID: {{user_group_data["user_group_id"]}}</p>
             <form action="/admin/user_group/confirm" method="POST">
               <div class="row">
                 <div class="col-sm-4">

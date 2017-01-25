@@ -52,11 +52,26 @@
               <p>ID:
                 {{user_data["user_id"]}}
               </p>
+              <p>権限:
+                {% if(user_data["user_role"] == 4) %}生徒
+                {% elseif(user_data["user_role"] == 3) %}<font color="red">運営</font>
+                {% elseif(user_data["user_role"] == 2) %}<font color="red"><b>管理者</b></font>
+                {% elseif(user_data["user_role"] == 1) %}<font color="#A00AA0"><b>所有者</b></font>
+                {% else %}不明
+                {% endif %}
+              </p>
               <p>メールアドレス:
                 {{user_data["user_email"]}}
               </p>
               <p>生年月日:
                 {{user_data["user_birthday"] |date("Y年m月d日")}}
+              </p>
+              <p>所属ユーザーグループ:
+                {% for user_group_data in user_group_data_list %}
+                {% if user_group_data["user_group_id"] == user_data["user_user_group_id"] %}
+                {{user_group_data["user_group_name"]}}
+                {% endif %}
+                {% endfor %}
               </p>
               <p>登録日:
                 {{user_data["created_at"]}}

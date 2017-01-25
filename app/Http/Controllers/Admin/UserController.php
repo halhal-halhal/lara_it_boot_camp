@@ -36,7 +36,9 @@ class UserController extends Controller
         return $this->render(
             "admin/user/index",
             [
-                "user_data_list" => $this->userLogic->getDataList(),]
+                "user_data_list" => $this->userLogic->getDataList(),
+              "user_group_data_list" => $this->userGroupLogic->getDataList(),
+            ]
         );
     }
 

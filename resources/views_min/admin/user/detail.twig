@@ -47,6 +47,14 @@
               <p>表示名:
                 {{account_data["user_name"]}}
               </p>
+              <p>権限:
+                {% if(user_data["user_role"] == 4) %}生徒
+                {% elseif(user_data["user_role"] == 3) %}<font color="red">運営</font>
+                {% elseif(user_data["user_role"] == 2) %}<font color="red"><b>管理者</b></font>
+                {% elseif(user_data["user_role"] == 1) %}<font color="#A00AA0"><b>所有者</b></font>
+                {% else %}不明
+                {% endif %}
+              </p>
               <p>メールアドレス:
                 {{account_data["user_email"]}}
               </p>
@@ -97,6 +105,16 @@
               </div>
               <input type="hidden" name="_token" value="{{csrf_token}}">
               <input type="hidden" name="user_id" value="{{account_data['user_id']}}">
+              <input type="hidden" name="user_name" value="{{account_data['user_name']}}">
+              <input type="hidden" name="user_role" value="{{account_data['user_role']}}">
+              <input type="hidden" name="user_real_name" value="{{account_data['user_real_name']}}">
+              <input type="hidden" name="user_email" value="{{account_data['user_email']}}">
+              <input type="hidden" name="user_birthday" value="{{account_data['user_birthday']}}">
+              <input type="hidden" name="user_gender" value="{{account_data['user_gender']}}">
+              <input type="hidden" name="user_address" value="{{account_data['user_address']}}">
+              <input type="hidden" name="user_pr_text" value="{{account_data['user_pr_text']}}">
+              <input type="hidden" name="updated_at" value="{{account_data['updated_at']}}">
+
             </form>
           </div>
         </div>

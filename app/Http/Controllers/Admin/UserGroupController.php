@@ -66,7 +66,7 @@ class UserGroupController extends Controller
         $this->userGroupLogic->upsertData($input);
 
         if (isset($input["user_group_id"]) && !empty($input["user_group_id"])) {
-            return Redirect::to("/admin/user_group/" . $input["user_group_id"]);
+            return Redirect::to("/admin/user_group/detail/" . $input["user_group_id"]);
         }
 
         return Redirect::to("/admin/user_group/");

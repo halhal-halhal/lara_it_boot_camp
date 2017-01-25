@@ -40,7 +40,7 @@
               <p>表示できるユーザーグループはありません．</p>
               {% else %}
                 {% for user_group_data in user_group_data_list %}
-                <h3>[ID:{{user_group_data["user_group_id"]}}] <a href="/admin/user_group/detail/{{user_group_data['user_group_id']}}">{{user_group_data["user_group_name"]}}</a></h3>
+                <h3> <a href="/admin/user_group/detail/{{user_group_data['user_group_id']}}">{{user_group_data["user_group_name"]}}</a></h3>
               {% endfor %}
             {% endif %}
             <h2>ユーザグループ登録</h2>
