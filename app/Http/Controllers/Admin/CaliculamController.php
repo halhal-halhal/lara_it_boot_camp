@@ -125,4 +125,20 @@ class CaliculamController extends Controller
 
         return Redirect::to("/admin/caliculam/" . $caliculam_id);
     }
+
+    public function delete($caliculam_id = null) //カリキュラム削除
+    {
+        $caliculam_data = [];
+        if (isset($caliculam_id) && !empty($caliculam_id)) {
+          DB::delete('delete from caliculam where caliculam_id = ?',[$caliculam_id]);
+        }
+
+        // エラーメッセージ
+        $error_message = "";
+        if (Session::has("Admin_CaliculamController_confirm_error_message") === true) {
+            $error_message = Session::pull("Admin_CaliculamController_confirm_error_message");
+        }
+
+        return Redirect::to("/admin/caliculam_list/");
+    }
 }

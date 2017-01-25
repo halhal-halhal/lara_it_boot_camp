@@ -75,4 +75,15 @@ class UserController extends Controller
 
         return Redirect::to("/admin/user/" . $input["user_id"]);
     }
+
+
+        public function delete($user_id = null) //ユーザー削除
+    {
+        $user_data = [];
+        if (isset($user_id) && !empty($user_id)) {
+          DB::delete('delete from User where user_id = ?',[$user_id]);
+        }
+
+        return Redirect::to("/admin/user_list/");
+    }
 }

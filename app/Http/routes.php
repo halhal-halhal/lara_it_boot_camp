@@ -194,6 +194,8 @@ Route::group(["prefix" => "/admin/", "namespace" => "Admin", "middleware" => ["w
     Route::post("/user/confirm", "UserController@confirm");
     // ユーザー権限変更 (ajax)
     Route::post("/user/change_user_role", "UserController@changeUserRole");
+    // ユーザー削除
+    Route::get("/user/delete/{caliculam_id}", "UserController@delete")->where("user_id", "[0-9]+");
     // カリキュラム一覧画面
     Route::get("/caliculam_list/{page?}", "CaliculamController@index")->where("page", "[0-9]+");
     // カリキュラム詳細画面
@@ -202,6 +204,8 @@ Route::group(["prefix" => "/admin/", "namespace" => "Admin", "middleware" => ["w
     Route::get("/caliculam/edit/{caliculam_id?}", "CaliculamController@edit")->where("caliculam_id", "[0-9]+");
     // カリキュラム登録
     Route::post("/caliculam/confirm", "CaliculamController@confirm");
+    // カリキュラム削除
+    Route::get("/caliculam/delete/{caliculam_id}", "CaliculamController@delete")->where("caliculam_id", "[0-9]+");
     // レッスン一覧画面
     Route::get("/lessen_list/{page?}", "LessenController@index")->where("page", "[0-9]+");
     // レッスン詳細画面
@@ -210,6 +214,8 @@ Route::group(["prefix" => "/admin/", "namespace" => "Admin", "middleware" => ["w
     Route::get("/lessen/edit/{lessen_id?}", "LessenController@edit")->where("lessen_id", "[0-9]+");
     // レッスン登録
     Route::post("/lessen/confirm", "LessenController@confirm");
+    // レッスン削除
+    Route::get("/lessen/delete/{lessen_id}", "LessenController@delete")->where("lessen_id", "[0-9]+");
     // メッセージ送信
     Route::get("/send_message", "SendMessageController@index");
     // メッセージ送信 (学生)
