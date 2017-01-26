@@ -35,7 +35,7 @@ class UserController extends Controller
         return $this->render(
             "admin/user/index",
             [
-                "user_data_list" => $this->userLogic->getDataList(),
+              "user_data_list" => $this->userLogic->getDataList(),
               "user_group_data_list" => $this->userGroupLogic->getDataList(),
             ]
         );
@@ -50,8 +50,7 @@ class UserController extends Controller
         return $this->render(
             "admin/user/detail",
             [
-                // //現在時刻
-                "date_today" => date("Y-m-d H:i:s", time()),
+                //最終ログインから現在までの経過日数
                 "past_date" => $this->userLogic->getLastLoginTime($user_id),
                 // ユーザー情報 (アクセスユーザのuser_dataと区別するために'account'を使用)
                 "account_data" => $this->userLogic->getData($user_id),

@@ -508,7 +508,12 @@ class UserLogic
                   "operator" => "=",
                   "value" => $user_id,]]
       );
+      if($time_lastLogin["user_login_time"]==NULL){
+        return "[ログイン記録なし]";
+      }
       $date_today = time();
-      return $time_lastLogin["user_login_time"];
+      $past_time = ($date_today - strtotime($time_lastLogin["user_login_time"])) / ( 60 * 60 * 24);
+
+      return floor($past_time) . "日経過";
     }
 }

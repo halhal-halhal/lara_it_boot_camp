@@ -70,14 +70,8 @@
               <p>登録日:
                 {{account_data["created_at"]}}
               </p>
-              <p>本日の日付:
-                {{date_today}}
-              </p>
-              <p>最終ログイン日:
+              <p>最終ログイン日から:
                 {{past_date}}
-              </p>
-              <p>最後のログインから:
-                {{date_today - past_date}}
               </p>
               <br>
               <a href="/admin/user/edit/{{account_data['user_id']}}">編集</a> / <a href="/admin/user/delete/{{account_data['user_id']}}"><font color="red">削除</font></a>
