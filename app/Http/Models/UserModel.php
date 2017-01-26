@@ -146,6 +146,7 @@ class UserModel extends Eloquent
             "user.user_facebook_id",
             "user.user_twitter_id",
             "user.user_is_mail_magazine",
+            "user.user_login_time",
             "user.created_at",
             "user.updated_at",]
         );
@@ -176,6 +177,7 @@ class UserModel extends Eloquent
             "user.user_facebook_id",
             "user.user_twitter_id",
             "user.user_is_mail_magazine",
+            "user.user_login_time",
             "user.created_at",
             "user.updated_at",];
 

@@ -76,6 +76,9 @@
               <p>登録日:
                 {{user_data["created_at"]}}
               </p>
+              <p>最終ログイン:
+                {{user_data["user_login_time"]}}
+              </p>
               <br>
               <a href="/admin/user/{{user_data['user_id']}}/">詳細</a> / <a href="/admin/user/edit/{{user_data['user_id']}}/">編集</a>
               <hr>

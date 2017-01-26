@@ -238,7 +238,7 @@ class UserLogic
     public function getDataList()
     {
         $result = $this->userModel->getDataList([]);
-
+        $date_today = time();
         if (count($result) < 1) {
             throw new Exception("ユーザー情報の取得に失敗しました．");
         }
@@ -256,6 +256,14 @@ class UserLogic
             }
             // 権限
             $user_data_list[$key]["user_role_display"] = $config_role[$user_data["user_role"]];
+
+            if($user_data_list[$key]["user_login_time"]==NULL){
+               $user_data_list[$key]["user_login_time"] = "[ログイン記録なし]";
+            }else{
+              $user_data_list[$key]["user_login_time"] = ($date_today - strtotime($user_data_list[$key]["user_login_time"])) / ( 60 * 60 * 24);
+              $user_data_list[$key]["user_login_time"] = floor($user_data_list[$key]["user_login_time"]) . "日前";
+            }
+
         }
 
         return $user_data_list;
@@ -514,6 +522,6 @@ class UserLogic
       $date_today = time();
       $past_time = ($date_today - strtotime($time_lastLogin["user_login_time"])) / ( 60 * 60 * 24);
 
-      return floor($past_time) . "日経過";
+      return floor($past_time) . "日前";
     }
 }
