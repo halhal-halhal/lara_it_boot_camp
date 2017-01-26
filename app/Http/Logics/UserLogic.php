@@ -7,6 +7,7 @@ use Session;
 use Exception;
 use Config;
 use Hash;
+use DB;
 
 class UserLogic
 {
@@ -492,5 +493,22 @@ class UserLogic
         }
 
         return $user_data;
+    }
+
+    /**
+    * 最終ログイン時間から経過日数を計算
+    *
+    */
+    public function getLastLoginTime($user_id)
+    {
+      $time_lastLogin = $this->userModel->getData(
+          [
+              [
+                  "key" => "user.user_id",
+                  "operator" => "=",
+                  "value" => $user_id,]]
+      );
+      $date_today = time();
+      return $time_lastLogin["user_login_time"];
     }
 }

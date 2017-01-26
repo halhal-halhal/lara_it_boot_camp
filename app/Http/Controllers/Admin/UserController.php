@@ -9,7 +9,6 @@ use Request;
 use Redirect;
 use DB;
 
-
 class UserController extends Controller
 {
     private $userLogic;
@@ -51,6 +50,9 @@ class UserController extends Controller
         return $this->render(
             "admin/user/detail",
             [
+                // //現在時刻
+                "date_today" => date("Y-m-d H:i:s", time()),
+                "past_date" => $this->userLogic->getLastLoginTime($user_id),
                 // ユーザー情報 (アクセスユーザのuser_dataと区別するために'account'を使用)
                 "account_data" => $this->userLogic->getData($user_id),
                 // ユーザーグループ情報
