@@ -62,7 +62,8 @@ class AuthController extends Controller
         }
 
         // ログイン時間を記録
-        $this->userLogic->insertLoginTime(Session::get("user_id"));
+        //  -> 記録のタイミングを変更したためコメントアウト
+        // $this->userLogic->insertLoginTime(Session::get("user_id"));
 
         // ログインが必要なページにログインせずにアクセスした場合
         if (Session::has("route_request_uri") ===  true) {
