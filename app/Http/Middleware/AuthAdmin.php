@@ -4,8 +4,6 @@ namespace App\Http\Middleware;
 
 use App\Http\Logics\PrivilegeLogic;
 use App\Http\Models\UserModel;
-use App\Http\Logics\UserLogic;
-use App\Http\Logics\AuthLogic;
 use Closure;
 use Session;
 use Redirect;
@@ -15,18 +13,6 @@ use DB;
 
 class AuthAdmin
 {
-      private $userLogic;
-      private $authLogic;
-
-      /**
-       * コンストラクタ
-       *
-       */
-      public function __construct()
-      {
-          $this->userLogic = new UserLogic();
-          $this->authLogic = new AuthLogic();
-      }
     /**
      * ログインが必要なページヘの非ログインユーザのアクセスを拒否
      *
@@ -44,8 +30,6 @@ class AuthAdmin
 
             return Redirect::to("/logout");
         }
-        // ログイン時間を記録
-        $this->userLogic->insertLoginTime(Session::get("user_id"));
         // 権限確認
         $user_id = Session::get("user_id");
         //$privilegeLogic = new PrivilegeLogic;
@@ -56,6 +40,7 @@ class AuthAdmin
         if ((int)$role_id > UserModel::ROLE_STAFF) {
             return Redirect::to("/mypage");
         }
+
         return $next($request);
     }
 }

@@ -451,9 +451,9 @@ class UserLogic
                 "updated_at" => date("Y-m-d H:i:s"),]
         );
 
-        if (count($result) < 1) {
-            throw new Exception("ユーザー権限の更新に失敗しました。");
-        }
+        // if (count($result) < 1) {
+        //     throw new Exception("ユーザー権限の更新に失敗しました。");
+        // }
 
         return true;
     }
@@ -477,9 +477,9 @@ class UserLogic
                 "updated_at" => date("Y-m-d H:i:s"),]
         );
 
-        if ($update_record < 1) {
-            throw new Exception("ユーザのログイン時間を記録に失敗しました。");
-        }
+        // if ($update_record < 1) {
+        //     throw new Exception("ユーザのログイン時間を記録に失敗しました。");
+        // }
 
         return true;
     }

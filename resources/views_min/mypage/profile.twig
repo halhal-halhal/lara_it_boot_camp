@@ -90,8 +90,8 @@
                     </div>
                     <div class="btn-wrapper update text-center"><input class="btn btn-green" id=submit type=submit value=この情報に更新する></div><input type=hidden name=user_id value={{user_profile_data.user_id}}>
                     <input type=hidden name=_token value={{csrf_token}}>
-                    <input type="hidden" name="user_user_group_id" value="{{account_data['user_user_group_id']}}">
-                    <input type="hidden" name="user_role" value="{{account_data['user_role']}}">
+                    <input type=hidden name="user_user_group_id" value="{{user_profile_data['user_user_group_id']}}">
+                    <input type=hidden name="user_role" value="{{user_profile_data['user_role']}}">
                   </form>
                 </section>
               </div>
